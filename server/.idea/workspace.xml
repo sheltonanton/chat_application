@@ -5,10 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="661f5dca-a974-475d-87f4-82727965832f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../client/app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../client/app/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../client/app/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client/app/src/routes/User/Login/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client/app/src/routes/User/Login/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/app/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../client/app/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/utils/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../client/utils/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/app/src/routes/User/Register/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../client/app/src/routes/User/Register/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,7 +16,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -34,25 +34,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "ruby.rails.projectView.checked": "true",
-    "settings.editor.selected.configurable": "terminal"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ruby.rails.projectView.checked&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;terminal&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Rails.Development: server">
     <configuration name="Rails console: server" type="IrbRunConfigurationType" factoryName="IRB console" temporary="true">
       <module name="server" />
@@ -224,7 +224,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1657380589461</updated>
-      <workItem from="1657380590871" duration="5737000" />
+      <workItem from="1657380590871" duration="6466000" />
+      <workItem from="1657406093707" duration="4892000" />
     </task>
     <servers />
   </component>
@@ -240,7 +241,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/server@Rails_console__server.rcov" NAME="Rails console: server Coverage Results" MODIFIED="1657382698188" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="server" />
-    <SUITE FILE_PATH="coverage/server@Development__server.rcov" NAME="Development: server Coverage Results" MODIFIED="1657383738938" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="server" />
+    <SUITE FILE_PATH="coverage/server@Development__server.rcov" NAME="Development: server Coverage Results" MODIFIED="1657410583736" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="server" />
     <SUITE FILE_PATH="coverage/server@rails_console.rcov" NAME="rails console Coverage Results" MODIFIED="1657382289547" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="server" />
   </component>
 </project>

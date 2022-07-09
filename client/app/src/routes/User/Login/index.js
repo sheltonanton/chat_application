@@ -2,7 +2,7 @@ import { debounce } from "@chat/utils";
 import { Input, Button } from "@mui/material";
 import React from "react";
 
-export default class Register extends React.Component {
+export default class Login extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -10,8 +10,8 @@ export default class Register extends React.Component {
     };
   }
 
-  register = () => {
-    fetch("/api/users", {
+  login = () => {
+    fetch("/api/user/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -21,7 +21,11 @@ export default class Register extends React.Component {
           name: this.state.name,
         },
       }),
-    });
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        const { user } = data;
+      });
   };
 
   render = () => {
@@ -34,8 +38,8 @@ export default class Register extends React.Component {
             500
           )}
         />
-        <Button variant="contained" onClick={() => this.register()}>
-          Register
+        <Button variant="contained" onClick={() => this.login()}>
+          Login
         </Button>
       </>
     );
