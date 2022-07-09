@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@chat/utils": "file:../utils",
     "@emotion/react": "^11.9.3",
     "@emotion/styled": "^11.9.3",
     "@mui/material": "^5.8.7",
@@ -13,7 +14,6 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
-    "@chat/utils": "file:../utils",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -39,5 +39,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "http-proxy-middleware": "^2.0.6"
   }
 }
