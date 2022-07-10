@@ -11,7 +11,7 @@ export default class Login extends React.Component {
   }
 
   login = () => {
-    fetch("/api/user/login", {
+    fetch("/api/auth/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
