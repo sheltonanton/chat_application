@@ -30,7 +30,7 @@ export default class Login extends React.Component {
 
   render = () => {
     return (
-      <>
+      <div>
         <Input
           defaultValue={this.state.name}
           onChange={debounce(
@@ -41,7 +41,7 @@ export default class Login extends React.Component {
         <Button variant="contained" onClick={() => this.login()}>
           Login
         </Button>
-      </>
+      </div>
     );
   };
 }
