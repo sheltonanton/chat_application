@@ -1,12 +1,21 @@
-class Api::AuthController < ApplicationController
-  def login
-    user = User.find_by(name: body[:name])
-    raise ApiException.new("User doesn't exist", :not_found) if user.blank?
+class Api::AuthController < ApiController
+  skip_before_action :check_auth, only: [:login]
 
-    render json: { user: }
+  def login
+    name = login_params[:name]
+    user = User.find_by(name: )
+    raise ApiException.new('User not found', :unauthorized) if user.nil?
+
+    token = JsonWebToken.encode(id: user.id)
+    time = Time.now + 24.hours.to_i
+    render json: {
+      token:,
+      exp: time.strftime("%m-%d-%Y %H:%M"),
+      user_id: user.id
+    }
   end
 
-  def body
+  def login_params
     params.require(:user).permit(:name)
   end
 end

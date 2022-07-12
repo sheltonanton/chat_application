@@ -1,4 +1,4 @@
-class Api::MessagesController < ApplicationController
+class Api::MessagesController < ApiController
   def index
     messages = Message.filter_by_sender(params[:s]).filter_by_receiver(params[:r])
     render json: { messages: }
