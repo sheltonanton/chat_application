@@ -4,8 +4,8 @@ class ApiController < ApplicationController
   private
 
   def check_auth
-    authorization = request.headers['Authorization']
-    header = header.split(' ').last if authorization
+    header = request.headers['Authorization']
+    header = header.split(' ').last if header.present?
     begin
       @decoded = JsonWebToken.decode(header)
       @current_user = User.find(@decoded[:id])
@@ -15,7 +15,7 @@ class ApiController < ApplicationController
       raise ApiException.new(e.message, :unauthorized)
     end
 
-    if DateTime.strptime(@decoded['exp'], "%m-%d-%Y %H:%M") < Time.now
+    if @decoded["exp"] < Time.now.to_i
       raise ApiException.new('Invalid Authorization token', :unauthorized)
     end
   end

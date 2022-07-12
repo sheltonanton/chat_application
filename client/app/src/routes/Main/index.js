@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import { Input, Button } from "@mui/material";
 
 import { debounce } from "@chat/utils";
@@ -8,10 +9,20 @@ function Main() {
   const textBoxRef = useRef();
   const [message, setMessage] = useState("");
   const [history, setHistory] = useState([]);
+  const navigate = useNavigate();
 
   function getMessages() {
-    fetch("api/messages?s=1&r=1&t=" + new Date().getTime())
-      .then((response) => response.json())
+    fetch("api/messages?s=1&r=1&t=" + new Date().getTime(), {
+      headers: {
+        Authorization: "Bearer " + localStorage.getItem("auth_token"),
+      },
+    })
+      .then((response) => {
+        if (response.status === 401) {
+          navigate("/login");
+        }
+        return response.json();
+      })
       .then((response) => {
         setHistory(response.messages);
       });
@@ -22,6 +33,7 @@ function Main() {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        Authorization: "Bearer " + localStorage.getItem("auth_token"),
       },
       body: JSON.stringify({
         message: {

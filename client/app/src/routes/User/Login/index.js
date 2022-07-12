@@ -1,16 +1,13 @@
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { debounce } from "@chat/utils";
 import { Input, Button } from "@mui/material";
-import React from "react";
 
-export default class Login extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      name: "",
-    };
-  }
+export default function Login(props) {
+  const [name, setName] = useState("");
+  const navigate = useNavigate();
 
-  login = () => {
+  const login = () => {
     fetch("/api/auth/login", {
       method: "POST",
       headers: {
@@ -18,31 +15,26 @@ export default class Login extends React.Component {
       },
       body: JSON.stringify({
         user: {
-          name: this.state.name,
+          name,
         },
       }),
     })
       .then((response) => response.json())
       .then((data) => {
         localStorage.setItem("auth_token", data.token);
-        console.log(this.props);
+        navigate("/", { replace: true });
       });
   };
 
-  render = () => {
-    return (
-      <div>
-        <Input
-          defaultValue={this.state.name}
-          onChange={debounce(
-            (e) => this.setState({ name: e.target.value }),
-            500
-          )}
-        />
-        <Button variant="contained" onClick={() => this.login()}>
-          Login
-        </Button>
-      </div>
-    );
-  };
+  return (
+    <div>
+      <Input
+        defaultValue={name}
+        onChange={debounce((e) => setName(e.target.value), 500)}
+      />
+      <Button variant="contained" onClick={() => login()}>
+        Login
+      </Button>
+    </div>
+  );
 }
